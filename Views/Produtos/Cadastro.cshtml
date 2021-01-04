@@ -1,0 +1,25 @@
+@model Produtos
+@{
+ViewData["Title"]="Cadastro do Produtos";
+}
+
+    <div class="container bg-dark" >
+        <form asp-action="Cadastro"method="POST" class="loginForm">
+        <h2> Cadastro de Produtos</h2> 
+        <p>
+            Cadastre produtos novos em estoque agora mesmo.
+        </p>       
+           <p>
+            <input asp-for="Nome" placeholder="Nome" size="50">     
+        </p>     
+        <p>          
+            <input asp-for="Valor" type="text"  placeholder="Valor" size="50">     
+        </p>      
+        <p>                 
+            <input asp-for="Quantidade"  placeholder="Quantidade" size="50">     
+        </p>      
+            <input type="submit" value="Cadastrar" class="botaoLogin"/>     
+        </p> 
+        </form>
+         <p id="">@ViewBag.Mensagem</p>
+    </div>

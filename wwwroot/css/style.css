@@ -1,0 +1,526 @@
+/*  CORES DO PROGETO:
+    color:#E3170A  vermelho
+    color:#A9E5BB azul claro
+    color:#FCF6B1 bege
+    color:#F7B32B amarelo
+    color:#2D1E2F roxo escuro menu*/
+html,body{
+    padding: 0;
+     margin: 0 auto;
+     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif;
+}
+.container{
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+.containerGeral
+{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+/*INICIO DO MENU*/
+.navegacao{
+    z-index: 1;
+    position: absolute;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color:#2D1E2F;
+    justify-content: space-between;
+    align-items: center;
+}
+.navegacao ul{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+.navegacao ul li{
+    padding-right: 20px;
+    color: rgb(7, 93, 168);
+}
+.navegacao ul li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.logo{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputmenu{
+    border-radius: 23px;
+    width: 350px;
+    height: 25px;
+    border: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+}
+.menuGerencia{
+    padding-top: 100px;
+}
+.menu-column{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.menu-column-links ul{
+    display: flex; 
+}
+.menu-column-links ul li{
+    padding: 0 10px;
+    list-style: none;
+}
+.controle{
+    position: absolute;top: 80px; position: fixed;z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /*padding-top:80px;*/
+    background: rgb(71, 71, 71);
+}
+.controle ul{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.controle ul li a{
+    
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    list-style: none;
+    padding:5px 0 ;
+    font-weight: bold;
+}
+.controle ul li a:hover{
+    
+    color:#2D1E2F;
+}
+.margemDoTopo{
+    padding-top: 80px;
+}
+
+/*Login*/
+.loginForm{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;padding-top: 100px;
+}
+.loginForm input{
+    border: 1px solid rgba(0, 0, 0, 0.589);
+    background: transparent;
+    color: rgb(27, 27, 27);
+    padding: 10px 10px;
+    font-size: 16px;
+}
+
+.loginForm p a{
+    color: rgba(0, 0, 0, 0.514);
+}
+.loginForm p a:hover{
+    color:#2D1E2F;
+}
+.botaoLogin:hover{
+    background: #2D1E2F;
+    border: transparent;
+    color: thistle;
+}
+.botaoLogin{
+    padding: 0 20px;
+}
+
+
+/*PRODUTO DETALHE*/
+.paginaDeCompra{
+    display: flex;
+}
+.produtoDetalhebg{
+    display: flex;
+}
+.produtoDetalhebg p{
+    font-size: 1.2em;
+}
+.produtoImagembg{
+    display: flex;
+}
+    .produtoImagem{
+        width: 70%;
+        margin: 0 auto;
+    }
+        .produtoImagem img{
+            width: 100%; 
+        }
+.produtoPagamentobg{
+    display: flex;
+}
+.produtoPagamento p{
+ font-size: 1.2em;
+ text-align: left;
+}
+.linksDeAcesso{
+    padding-top: 110px;
+    color:#2D1E2F ;
+    width: 100%;
+    height: 80px;
+    font-size: 1em;
+}
+.linksDeAcesso a{
+    color:#2D1E2F ;
+    text-decoration: none;
+}
+/*PRODUTOS*/
+.box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top:100px;
+}
+.grade{
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.conteudo{
+    width: 250px;
+    height: auto;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.103); border-radius: 1px;
+}
+.conteudo > .imagemConteudo{
+    width: 240px;
+    height: 250px;
+    background: rgb(218, 217, 217);
+    border-radius:2px ;
+    cursor: pointer;
+}
+.conteudo > .tituloConteudo{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    justify-content: start;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(88, 88, 88);
+}
+.conteudo > .valorConteudo{
+    width: 190px;
+    height: 40px;
+    border-radius:2px ;
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(88, 88, 88);
+}
+
+/*USUARIO LISTA*/
+.usuario-logado-nome{
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.imagemUsuario{
+    width: 80px;
+    height: 80px;
+    background: rgb(226, 225, 225);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius:50px ;
+}
+.idUsuario{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    background: rgb(226, 225, 225);
+    margin-bottom: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.nomeUsuario{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    background: rgb(226, 225, 225);
+    margin-bottom: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.loginUsuario{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    background: rgb(226, 225, 225);
+    margin-bottom: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.senhaUsuario{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    background: rgb(226, 225, 225);
+    margin-bottom: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.tipoUsuario{
+    width: 190px;
+    border-radius:2px ;
+    height: 40px;
+    background: rgb(226, 225, 225);
+    margin-bottom: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.alteracoesUsuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*RODAPE*/
+.rodape{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2D1E2F;
+    color: blanchedalmond;
+    padding: 50px 0;
+}
+.divisaoRodape{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-width: 25%;
+    
+}
+.divisaoRodape ul li{
+    list-style: none;
+}
+.divisaoRodape ul li a{
+    text-decoration: none;
+    color: white;
+}
+/*index*/
+.featuring
+{
+ 
+    width: 100%;height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("~img/fashion-1031469_1920.jpg");
+
+}
+.container-featuring
+{
+    position: relative;
+    width: 100%;
+    height:600px;
+    display: flex;
+    flex-direction: column;
+}
+.container-featuring > .frete
+{
+    position: absolute;
+    top: 130px;
+    background: #f0eeeede;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button-featuring
+{
+    display: flex;
+    align-self: center;
+    padding: 10px 60px;
+    background: #25110181;
+    color: #f1f1f1;
+    border: none;
+    position: absolute;bottom: 100px;
+    font-size: 1.2em;
+}
+.promocoes{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+.container-promocoes
+{
+    display: flex;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+.botao-promocao
+{
+    display: flex;
+    background:#2D1E2F;
+    width: 22%;
+    padding: 15px 0px;
+    color: #f1f1f1;
+    justify-content: center;
+    align-items: center;
+}
+
+.sessao
+{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(241, 241, 241);
+}
+.container-sessao
+{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+
+}
+.box-sessao
+{
+    margin:80px 0 ;
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+    overflow: hidden;
+}
+.box-sessao-img
+{
+    overflow: hidden;
+    width: 100%;
+}
+.box-sessao:hover
+{
+   background: rgba(41, 41, 41, 0.445);
+}
+
+.box-sessao-img img{
+    width:100%;  
+    overflow: hidden;
+}
+
+.box-sessao > p{
+    text-align: center;
+}
+.categorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-categorias
+{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+.categoria-img
+{
+    margin:80px 0 ;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 0, 0.219);
+}
+.categoria-img img{
+    width: 100%;
+    
+}
+
+.marcas
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(245, 245, 245);
+    
+}
+.container-marcas
+{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+.img-marcas
+{
+    margin:80px 0 ;
+    width: 180px;
+    height: auto;
+    overflow: hidden;
+}
+.img-marcas img{
+    width: 100%;
+}
+/*fim index*/
+

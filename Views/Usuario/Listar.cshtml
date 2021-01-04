@@ -1,0 +1,45 @@
+@model IEnumerable<Usuario>
+@{     ViewData["Title"] = "Listagem de Usuário"; } 
+
+<div class="container">
+        <div class="box">
+          <h2>Listar Usuario</h2>
+
+            <div class="grade">
+                @foreach (Usuario u in Model)
+                {
+                <div class="conteudo">
+                    <div class="imagemUsuario">
+                        
+                    </div>
+                    <div class="idUsuario">
+                        @u.Id
+                    </div>
+                    <div class="nomeUsuario">
+                        @u.Nome
+                    </div>
+                    <div class="loginUsuario">
+                        @u.Login
+                    </div>
+                    <div class="senhaUsuario">
+                        @u.Senha
+                    </div>
+                    <div class="tipoUsuario">
+                        @u.Tipo
+                    </div>
+                    <div>
+                         <td>
+                   <a href="/Usuario/Editar?Id=@u.Id">editar</a>
+                   <span> | </span>
+                   <a href="/Usuario/Remover?Id=@u.Id">remover</a>
+               </td>
+                    </div>
+                   
+                </div>
+                    
+                }
+                
+            </div>
+        </div>
+       
+    </div>

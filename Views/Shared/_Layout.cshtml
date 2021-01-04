@@ -1,0 +1,235 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoFullStack</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsivo.css">
+  <!--  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header>
+       <!--MOBILE--ACESSO SEM NENHUM TIPO DE USUARIO; ACESSO SEM LOGIN!!!-->
+        @if(Context.Session.GetInt32("idUsuario")==null){
+            <button id="abrirMenu" class="btnMenu">
+                <img src="~/img/menu.svg" alt="">
+
+                <ul>
+                    <li class="logo">Fabricio Alves</li>
+                </ul>
+            </button>
+            <nav id="menuResponsivo">
+                <div class="usuarioLogado">
+                    <button id="sairMenu">x</button>
+                </div>   
+                <ul class="listaMenuResponsivo">
+                    <li ><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >Produtos</a></li>
+                    <li ><a asp-controller="Usuario" asp-action="Login" >Login</a></li>
+                    <li>
+                    </li>
+                </ul>
+            </nav>
+        }
+        <!--MOBILE--ACESSO DO TIPO ADMINISTRADOR;  TEM ACESSO AO PAINEL ADMINISTRATIVO; LIBERADO TODAS AS AÇÕES DENTRO DO PAINEL ADMINISTRATIVO-->
+        @if(Context.Session.GetInt32("idUsuario")!= null && Context.Session.GetInt32("tipoUsuario")==0 ){
+            <button id="abrirMenu" class="btnMenu">
+                <img src="~/img/menu.svg" alt="">
+            </button>
+            <nav id="menuResponsivo">
+                <div class="usuarioLogado">
+                    <button id="sairMenu">x</button>
+                    <span  class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                    <span><a asp-controller="Usuario" asp-action="Logout">sair</a></span>
+                </div>   
+                <ul class="listaMenuResponsivo">
+                    <li ><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >Produtos</a></li>
+                </ul>
+            </nav>
+        }
+        <!--MOBILE--ACESSO DO TIPO ADMINISTRADOR;  TEM ACESSO AO PAINEL ADMINISTRATIVO; LIBERADO TODAS AS AÇÕES DENTRO DO PAINEL ADMINISTRATIVO-->
+        @if(Context.Session.GetInt32("idUsuario")!= null && Context.Session.GetInt32("tipoUsuario")==1 ){
+            <button id="abrirMenu" class="btnMenu">
+                <img src="~/img/menu.svg" alt="">
+            </button>
+            <nav id="menuResponsivo">
+                <div class="usuarioLogado">
+                    <button id="sairMenu">x</button>
+                    <span class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                    <span><a asp-controller="Usuario" asp-action="Logout">sair</a></span>
+                </div>   
+                <ul class="listaMenuResponsivo">
+                    <li ><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >Produtos</a></li>
+                </ul>
+            </nav>
+        }
+        <!--MOBILE--ACESSO DO TIPO CLIENTE;NAO TEM ACESSO AO PAINEL ADMINISTRATIVO; APENAS NAVEGAÇÃO NA PAGINA!!!-->
+        @if(Context.Session.GetInt32("idUsuario")!= null && Context.Session.GetInt32("tipoUsuario")==2){
+            <button id="abrirMenu" class="btnMenu">
+                <img src="~/img/menu.svg" alt="">
+            </button>
+            <nav id="menuResponsivo">
+            <div class="usuarioLogado">
+                <button id="sairMenu">x</button>
+                <span  class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                <span><a asp-controller="Usuario" asp-action="Logout"> sair </a></span>
+            </div>   
+            <ul class="listaMenuResponsivo">
+                <li ><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >Produtos</a></li>
+                <li>
+                </li>
+            </ul>
+        </nav>
+        }
+
+
+                <!--DESKTOP--ACESSO SEM LOGIN-->
+                @if(Context.Session.GetInt32("idUsuario") == null){
+                    
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="logo">Fabricio Alves</li>
+                        </ul>
+                        <ul>
+                            <li><input type="text" placeholder="pesquise seu produto" class="inputmenu"></li>
+                        </ul>
+                        <ul>
+                            <li ><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >produtos</a></li>
+                            <li ><a asp-controller="Usuario" asp-action="LoginCliente" >Login</a></li>
+                        </ul>
+                    
+                    </nav>
+                }  
+                <!--DESKTOP--ACESSO DO CLIENTE; NAO TEM ACESSO AO PAINEL ADMINISTRATIVO; APENAS NAVEGAÇÃO-->
+                @if(Context.Session.GetInt32("idUsuario") != null && Context.Session.GetInt32("tipoUsuario") ==2){ 
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="logo">Fabricio Alves</li>
+                        </ul>
+                        <ul>
+                            <li><input type="text" placeholder="pesquise seu produto" class="inputmenu"></li>
+                        </ul>
+                        <ul>
+                            <li ><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >produtos</a></li>
+                            <li>
+                            @if(Context.Session.GetInt32("idUsuario") != null)
+                            {
+                                <span  class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                                <span><a asp-controller="Usuario" asp-action="Logout"> sair </a></span>
+                            }
+                            </li>
+                        </ul>
+                    </nav>
+                }
+                <!--DESKTOP-- ACESSO COLABORADOR; TEM ACESSO AO PAINEL ADMINISTRATIVO; POREM APENAS VIZUALIZAÇÃO-->
+                @if(Context.Session.GetInt32("idUsuario") != null && Context.Session.GetInt32("tipoUsuario")==1){
+                
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="logo">Fabricio Alves</li>
+                        </ul>
+                        <ul>
+                            <li><input type="text" placeholder="pesquise seu produto" class="inputmenu"></li>
+                        </ul>
+                        <ul>
+                            <li ><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >produtos</a></li>
+                            <li>
+                            @if(Context.Session.GetInt32("idUsuario") != null)
+                            {
+                                <span  class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                                <span><a asp-controller="Usuario" asp-action="Logout">sair</a></span>
+                            }
+                            </li>
+                        </ul>
+                    
+                    </nav>
+                    <div class="controle">  
+                        <ul>
+                            <li ><a asp-controller="Usuario" asp-action="cadastro">Cadastro de Usuarios</a></li>
+                            <li ><a asp-controller="Usuario" asp-action="Listar" >Lista de Usuarios</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="Cadastro" >Cadastro de Produtos</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="Listar" >Lista de Produtos</a></li>
+                        </ul>
+                    </div>
+                }
+                <!--DESKTOP-- ACESSO ADMINISTRADOR; TEM ACESSO AO PAINEL ADMINISTRATIVO; LIBERADO TODAS AS AÇÕES DENTRO DO PAINEL ADMINISTRATIVO-->
+                @if(Context.Session.GetInt32("idUsuario") != null && Context.Session.GetInt32("tipoUsuario")==0){
+                
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="logo">Fabricio Alves</li>
+                        </ul>
+                        <ul>
+                            <li><input type="text" placeholder="pesquise seu produto" class="inputmenu"></li>
+                        </ul>
+                        <ul>
+                            <li ><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="ListarProdutos" >produtos</a></li>
+                            <li>
+                            @if(Context.Session.GetInt32("idUsuario") != null)
+                            {
+                                <span  class="usuario-logado-nome">@Context.Session.GetString("nomeUsuario")</span>
+                                <span><a asp-controller="Usuario" asp-action="Logout"> sair </a></span>
+                            }
+                            </li>
+                        </ul>
+                    
+                    </nav>
+                    <div class="controle">  
+                        <ul>
+                            <li ><a asp-controller="Usuario" asp-action="cadastro">Cadastro de Usuarios</a></li>
+                            <li ><a asp-controller="Usuario" asp-action="Listar" >Lista de Usuarios</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="Cadastro" >Cadastro de Produtos</a></li>
+                            <li ><a asp-controller="Produtos" asp-action="Listar" >Lista de Produtos</a></li>
+                        </ul>
+                    </div>
+                }
+
+        
+      
+    </header>
+    <div>
+        <main class="">     
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="rodape">
+        <div class="divisaoRodape">
+             <li class="logo">Fabricio Alves</li>
+        </div>
+        <div class="divisaoRodape">
+            <ul>
+                <li><h3>Resource</h3></li>
+                <li><a href="">Resource</a></li>
+                <li><a href="">Resource</a></li>
+                <li><a href="">Resource</a></li>
+                <li><a href="">Resource</a></li>
+            </ul>
+        </div>
+        <div class="divisaoRodape">
+            <ul>
+                <li><h3>About</h3></li>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+
+        </div>
+        <div class="divisaoRodape">Redes sociais</div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

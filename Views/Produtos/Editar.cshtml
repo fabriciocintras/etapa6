@@ -1,0 +1,25 @@
+@model Produtos
+@{
+ViewData["Title"]="Editar Produtos";
+}
+    <div class="container" >
+        <h2>Editar Produtos</h2> 
+        <form  asp-action="Gravar" method="POST" class="loginForm">
+    
+            <h2> Editar</h2> 
+           <p>
+                <input type="hidden" asp-for="Id">          
+                <input asp-for="Nome"  placeholder="Nome">     
+            </p>     
+            <p>             
+                <input asp-for="Quantidade" placeholder="Quantidade">     
+            </p>    
+            <p>              
+                <input asp-for="Valor" type="text"  placeholder="Valor">     
+            </p>     
+            <p>         
+                <input type="submit" value="Cadastrar" />     
+            </p> 
+            <p>@ViewBag.Mensagem</p>
+        </form>
+    </div>

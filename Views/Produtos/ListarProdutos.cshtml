@@ -1,0 +1,19 @@
+@model IEnumerable<Produtos>
+@{     ViewData["Title"] = "Produtos"; }
+          
+       
+<div class="container ">
+        <div class="box">
+            <h2>Produtos</h2>
+            <div class="grade">
+                @foreach (Produtos i in Model)
+                {
+                    <div class="conteudo">
+                        <div class="imagemConteudo"></div>
+                        <div class="tituloConteudo">@i.Nome</div>
+                        <div class="valorConteudo"> @i.Valor</div>
+                    </div>
+                } 
+            </div>
+        </div>   
+</div>

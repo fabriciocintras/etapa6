@@ -1,0 +1,260 @@
+#menuResponsivo{
+    display: none;
+}
+#abrirMenu{
+    display: none;
+    position: fixed;
+    position: relative;
+    z-index: 1000;
+    padding: 15px;
+    width: 100%;
+}
+#abrirMenu ul{
+    display: block;width: 100%;
+}
+#abrirMenu img{
+    margin: 0 auto;
+    position: fixed;
+    width: 18px;
+}
+@media(max-width:600px){
+
+  
+    .navegacao{
+        display: none;
+    }
+    #menuResponsivo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+        height: 100vh;
+        background: #2b1f2c;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1001;
+        transform: translate3d(-100%, 0, 0);
+        transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    }
+    #menuResponsivo.show{
+        transform: translate3d(0px,0,0);
+    }
+    .btnMenu{
+        width: 100%;display: flex;justify-content: start;align-items: center;
+        background: transparent;
+        border: none;
+
+    }
+    .btnMenu img{
+        width: 40px;display: flex;
+    }
+    #menuResponsivo ul{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #menuResponsivo ul li a{
+        color:white;
+    }
+    #abrirMenu{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        background-color:#2D1E2F ;
+        position: fixed;
+    }
+    .contextSession{
+        color: white;
+    }
+    #sairMenu{
+        background: transparent;border: none;
+        font-weight: bolder;
+        font-size: 23px;
+        color: white;
+    }
+    .sair{
+        color: white;
+        text-decoration: none;
+        font-size: 19px;
+    }
+    .usuarioLogado{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;height: 80px;
+
+        background: rgb(43, 31, 44);
+    }
+    .listaMenuResponsivo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 100px;
+    }
+    .listaMenuResponsivo li{
+        padding-top: 10px;
+        list-style: none;
+    }
+    .listaMenuResponsivo li a{
+        text-decoration: none;
+        font-size: 19px;
+
+    }
+    /*margem do topo*/
+    .margemDoTopo{
+        padding-top: 0;
+        height: 80vh;
+    }
+    .divisaoRodape{
+       
+        min-width: 100%;
+        
+    }
+    /*produto*/
+    .box{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .grade{
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .conteudo{
+        display: flex;
+        min-width: 30%;
+        height: auto;
+        margin:0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 0px;
+    }
+    /*controle adminstrativo*/
+    .controle ul{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        
+    }
+    .controle ul li{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .controle ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        list-style: none;
+        padding:5px 0 ;
+        font-weight: bold;
+    }
+    /*responsivo index*/
+    .container-promocoes
+    {
+        display: flex;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+        .botao-promocao
+    {
+        display: flex;
+        background:#2D1E2F;
+        width: 47%;
+        margin: 5px;
+        color: #FFFFFF;
+        justify-content: center;
+        align-items: center;
+    }
+    .featuring{
+        background-size: cover;
+    }
+
+    .container-featuring
+    {
+        position: relative;
+        width: 100%;
+        height:90vh;
+        padding-top: 77px;
+    }
+    .container-featuring > .frete
+    {display: none;
+    }
+    #button-featuring
+    {
+        position: absolute;bottom: 100px;
+    }
+    .container-sessao
+    {
+        width: 100%;
+        justify-content: center;
+        overflow: hidden;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .box-sessao
+    {
+        margin:5px;
+        width: 100%;
+    }
+    .sessao{
+        display: flex;
+        
+    }
+
+    .container-categorias
+    {
+        width: 100%;
+        justify-content:center;
+    }
+    .categoria-img
+    {
+        padding:15px;
+        width: 150px;
+        height: 150px;
+    }
+    .marcas
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .container-marcas
+    {
+        width: 80%;
+        justify-content: center;
+
+        
+        
+    }
+    .img-marcas
+    {
+        margin:30px 0 ;
+
+    }
+    /*responsivo index*/
+
+
+}
+
